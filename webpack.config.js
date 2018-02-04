@@ -5,7 +5,7 @@ var entries = {}
 var templates = glob.sync("./templates/**/*.js")
 for (var i=0,len=templates.length; i<len; i++) {
     const basename = path.basename(templates[i]).replace(/\.js$/, '')
-    entries[basename] = path.resolve(templates[i])
+    entries[templates[i].replace(/^\.\/templates\//, '').replace(/\.js$/, '')] = path.resolve(templates[i])
 }
 
 module.exports = {

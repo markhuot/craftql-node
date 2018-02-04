@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const craftql = require('./lib/craftql')
 
-craftql.addHigherOrderComponent(require('./lib/TestHOC'))
+// craftql.addHigherOrderComponent(require('./lib/TestHOC'))
 
 app.use(express.static('./public'))
 app.use(craftql.routing)

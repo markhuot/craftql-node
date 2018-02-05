@@ -1,4 +1,8 @@
-import { createElement } from 'react'
+import React from 'react'
 
-export default props =>
-    createElement('h1', {className: "some-class"}, 'My index template')
+export default () => (
+    <div>
+        <h1>My index template</h1>
+        <p><a href="/destinations">Destinations?!</a></p>
+    </div>
+)

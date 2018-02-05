@@ -4,10 +4,8 @@ import gql from 'graphql-tag';
 
 class Component extends BaseComponent {
     render() {
-        console.log('data is', this.props.data)
-
         return (
-            <h1>Hello world!</h1>
+            <h1>Hello world! id: {this.props.data.entry.title}</h1>
         )
     }
 }
@@ -21,10 +19,12 @@ const query = gql`
     }
 `
 
-const options = { options: {
-    variables: {
-        id: 6
-    }
-}}
+const options = ({ entryId }) => {
+    return ({
+        variables: {
+            id: entryId
+        }
+    })
+}
 
-export default graphql(query, options)(Component);
+export default graphql(query, {options})(Component);
